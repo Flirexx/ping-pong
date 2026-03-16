@@ -1,7 +1,11 @@
 from pygame import *
-win = display.set_mode(700, 500)
+x = 700
+y = 500
+win = display.set_mode((x, y))
+win.fill((122, 77, 129))
+display.update()
 game = True
 while game:
-  for event in event.get
-  if event.get == quit:
-    game = False
+  for e in event.get():
+    if e.type == QUIT:
+      game = False
