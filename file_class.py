@@ -26,3 +26,18 @@ class Rocket(GameSprite):
             self.rect.y -= self.speed
         if keys[K_f] and self.rect.y < 400:
             self.rect.y += self.speed
+class Ball(GameSprite):
+    def __init__(self, window, speed, name_image, x, y, w, h):
+        super().__init__(window, speed, name_image, x, y, w, h)
+        self.speed_x = 3
+        self.speed_y = 3
+    def move_ball(self):
+        self.rect.x += self.speed_x
+        self.rect.y += self.speed_y
+        if self.rect.y >= 440:
+            self.speed_y *= -1
+            self.rect.y += self.speed_y
+            
+        if self.rect.y <= 0:
+            self.speed_y *= -1
+            self.rect.y += self.speed_y
